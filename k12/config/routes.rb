@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+  get '/k12', to: 'k12#index'
+  get '/k12/:id', to: 'k12#read'
+
+  post '/k12', to: 'k12#create'
+
+  put '/k12/:id', to: 'k12#update'
+
+  delete '/k12/:id', to:'k12#delete'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root to: redirect('https://github.com/Tubebaum/MicroApps-Assignment-2')
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

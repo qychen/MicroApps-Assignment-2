@@ -13,12 +13,12 @@
 
 # configure the user information
 uid = '7'
-res_queue = 'response_Roy'
+res_queue = 'response_tom'
 
 gem 'aws-sdk', '< 2'
 require 'aws-sdk'
 
-AWS.config(access_key_id: 'AKIAIXWVWSVGRVRUPEJQ', secret_access_key: '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', region: 'us-east-1')
+AWS.config(access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], region: 'us-east-1')
 
 # Gets an instance of the SQS interface using the default configuration
 sqs = AWS::SQS.new
