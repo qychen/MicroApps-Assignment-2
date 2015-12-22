@@ -34,7 +34,7 @@ end
 
 # Now get  the first message from queue
 puts "Retrieving the first message from queue ..."
-q.poll(:idle_timeout => 5) do |msg|
+q.poll(:idle_timeout => 2) do |msg|
   puts "Retrieved the message '#{msg.body}'"
 end
 

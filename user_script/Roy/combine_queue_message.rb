@@ -18,7 +18,7 @@ res_queue = 'response_tom'
 gem 'aws-sdk', '< 2'
 require 'aws-sdk'
 
-AWS.config(access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], region: 'us-west-1')
+AWS.config(access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], region: 'us-east-1')
 
 (queue_name,cid,op,url,body) = ARGV
 unless queue_name and cid and body
@@ -66,7 +66,7 @@ rescue AWS::SQS::Errors::InvalidParameterValue => e
   exit 1
 end
 puts "Retrieving response message ..."
-rq.poll(:idle_timeout => 15) do |msg|
+rq.poll(:idle_timeout => 20) do |msg|
   puts "Retrieved the message '#{msg.body}'"
 end
 
