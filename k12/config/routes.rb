@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   get '/k12', to: 'k12#index'
   get '/k12/:id', to: 'k12#read'
+  get '/k12/:id/:field', to: 'k12#read_field'
 
   post '/k12', to: 'k12#create'
+  post '/k12/:id/:field', to: 'k12#create_field'
 
   put '/k12/:id', to: 'k12#update'
+  put '/k12/:id/:field', to: 'k12#update_field'
 
-  delete '/k12/:id', to:'k12#delete'
+  delete '/k12/:id', to: 'k12#delete'
+  delete '/k12/:id/:field', to: 'k12#delete_field'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
