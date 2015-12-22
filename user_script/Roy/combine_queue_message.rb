@@ -18,7 +18,7 @@ res_queue = 'response_tom'
 gem 'aws-sdk', '< 2'
 require 'aws-sdk'
 
-AWS.config(access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], region: 'us-east-1')
+AWS.config(access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], region: 'us-west-1')
 
 (queue_name,cid,op,url,body) = ARGV
 unless queue_name and cid and body
